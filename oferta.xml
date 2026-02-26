@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ofertaFormativa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="oferta_formativa.xsd">
+    
+    <modulo codigo="M01">
+        <nombre>Lenguajes de Marcas</nombre>
+        <horas>96</horas>
+        
+        <unidad>
+            <titulo>XML y validación</titulo>
+            <horasUnidad>40</horasUnidad>
+        </unidad>
+        
+        <unidad>
+            <titulo>XSLT y Transformaciones</titulo>
+            <horasUnidad>56</horasUnidad>
+        </unidad>
+        
+        <requisitos>
+            <requisito>Conocimientos básicos de informática</requisito>
+        </requisitos>
+        
+        <resultado>Crear documentos XML validados</resultado>
+    </modulo>
+    
+    <modulo codigo="M02">
+        <nombre>Bases de Datos</nombre>
+        <horas>120</horas>
+        
+        <unidad>
+            <titulo>Modelo Relacional</titulo>
+            <horasUnidad>60</horasUnidad>
+        </unidad>
+        
+        <unidad>
+            <titulo>SQL</titulo>
+            <horasUnidad>60</horasUnidad>
+        </unidad>
+        
+        <requisitos>
+            <requisito>Lógica básica</requisito>
+        </requisitos>
+        
+        <resultado>Gestionar bases de datos relacionales</resultado>
+    </modulo>
+    
+</ofertaFormativa>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Tipo simple con restricción -->
+    <xs:simpleType name="horasType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="500"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Tipo complejo unidad -->
+    <xs:complexType name="unidadType">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="horasUnidad" type="horasType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Tipo complejo módulo -->
+    <xs:complexType name="moduloType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="horas" type="horasType"/>
+            <xs:element name="unidad" type="unidadType" maxOccurs="unbounded"/>
+            <xs:element name="requisitos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="requisito"
+                                    type="xs:string"
+                                    maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="resultado" type="xs:string"/>
+        </xs:sequence>
+        
+        <xs:attribute name="codigo" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="M[0-9]{2}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <!-- Elemento raíz -->
+    <xs:element name="ofertaFormativa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="modulo"
+                            type="moduloType"
+                            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Restricción de unicidad -->
+        <xs:unique name="codigoUnico">
+            <xs:selector xpath="modulo"/>
+            <xs:field xpath="@codigo"/>
+        </xs:unique>
+        
+    </xs:element>
+    
+</xs:schema>
