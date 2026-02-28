@@ -2,11 +2,11 @@
 
 
 <ofertaFormativa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:noNamespaceSchemaLocation="oferta_formativa.xsd">
+                 xsi:noNamespaceSchemaLocation="oferta.xsd">
     
     <modulo codigo="M01">
         <nombre>Lenguajes de Marcas</nombre>
-        <horas>960</horas>
+        <horas>96</horas>
         
         <unidad>
             <titulo>XML y validación</titulo>
